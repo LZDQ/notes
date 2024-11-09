@@ -60,3 +60,40 @@ Under folder `~/Library/LaunchAgents/`. Sample clash core plist by GPT:
   </dict>
 </plist>
 ```
+
+Use `killall` seems to give a return code of 0 and it will not automatically restart.
+
+## pyright
+
+```lua
+-- npm install -g pyright
+lspconfig.pyright.setup {
+	autostart = true,
+	settings = {
+		python = {
+			analysis = {
+				autoSearchPaths = true,
+				diagnosticMode = 'workspace',
+				useLibraryCodeForTypes = true,
+				typeCheckingMode = 'off',
+				reportMissingImports = true,
+			}
+		}
+	},
+}
+```
+
+Use `pyrightconfig.json` to overwrite. Example config to disable import resolve error. On mac there is a bug or something and I cannot fix so I had to disable the diagnostic lol
+
+```json
+{
+	"reportMissingImports": false
+}
+```
+
+Or, in `pyproject.toml`, add these:
+```toml
+# Pyright configuration
+[tool.pyright]
+reportMissingImports = false
+```

@@ -29,7 +29,9 @@ Download clash core, run `./clash --help` to see the flags. `-d` is for config d
 
 If already used CFW, the config directory is `~/.config/clash` and the profile is `~/.config/clash/profiles/<timestamp>.yml`.
 
-On MacOS, CFW has a memory leak so switching to core + web dashboard could help. Use `launchd` to setup an automatic task.
+// On MacOS, CFW has a memory leak so switching to core + web dashboard could help. Use `launchd` to setup an automatic task.
+
+Enable CFW lightweight mode so that the GUI will not render. This saves resources and avoids the memory leak.
 
 ## Mac launchd service
 

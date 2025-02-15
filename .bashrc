@@ -19,6 +19,8 @@ export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
 export PATH="$PATH:/home/ldq/.dotnet/tools"
 export PATH="$PATH:/home/ldq/go/bin"
 
+# fortune | cowsay -f $(cowsay -l | shuf -n1) | lolcat
+fortune | cowsay -f $(echo "default daemon dragon dragon-and-cow tux turkey stegosaurus sheep moose eyes" | tr " " "\n" | shuf -n1) | lolcat
 
 # Function to activate Conda environment when cd into ~/AI or ~/CTF from outside
 auto_activate_conda() {
@@ -65,12 +67,12 @@ cd_and_activate_env() {
     builtin cd "$@" && auto_activate_conda
 }
 
+auto_activate_conda
+
 # Add a PROMPT_COMMAND to execute the function each time the prompt is displayed
 # PROMPT_COMMAND="auto_activate_conda; $PROMPT_COMMAND"
 
 # source /opt/esp-idf/export.sh
 
-# fortune | cowsay -f $(cowsay -l | shuf -n1) | lolcat
-fortune | cowsay -f $(echo "default daemon dragon dragon-and-cow tux turkey stegosaurus sheep moose eyes" | tr " " "\n" | shuf -n1) | lolcat
 
 eval "$(thefuck --alias)"

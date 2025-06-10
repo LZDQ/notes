@@ -69,6 +69,12 @@ cd_and_activate_env() {
 
 auto_activate_conda
 
+# https://wiki.archlinux.org/title/Fzf#Arch_specific_fzf_uses
+alias p="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+alias pr="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
+# Made by myself
+alias y="yay -Slqa | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
+
 # Add a PROMPT_COMMAND to execute the function each time the prompt is displayed
 # PROMPT_COMMAND="auto_activate_conda; $PROMPT_COMMAND"
 
@@ -76,3 +82,4 @@ auto_activate_conda
 
 
 eval "$(thefuck --alias)"
+uwufetch

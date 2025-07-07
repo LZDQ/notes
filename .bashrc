@@ -44,6 +44,7 @@ cd_hook() {
 
 	# nvm use if there is a .nvmrc
 	[ -f ".nvmrc" ] && nvm use
+	return 0
 }
 
 # https://wiki.archlinux.org/title/Fzf#Arch_specific_fzf_uses

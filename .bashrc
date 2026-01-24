@@ -45,7 +45,12 @@ HISTSIZE=10000
 
 export AUTOENV_ENV_FILENAME='.autoenv'
 
-mdcat() { echo "\`\`\`${1##*.}"; cat "${1}"; echo '```'; }
+mdcat() { echo "\`${1}\`"; echo "\`\`\`${1##*.}"; cat "${1}"; echo '```'; }
+export -f mdcat
+# Example usage to print files with md:
+# {
+#   find ./vibeforces -type f -name "*.py";
+#   echo 'docker-compose.yml';
+# } | xargs -n1 sh -c 'mdcat "$@"; echo;' _ | xclip -selection clipboard
 
 uwufetch
-

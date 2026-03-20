@@ -36,6 +36,7 @@ __nvm_ps1() {
     nvm current 2>/dev/null | sed "/^system$/d; s/.*/(&) /"
   fi
 }
+# For ubuntu, add this here: PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 PS1='$(__nvm_ps1)'"$PS1"
 HISTSIZE=10000
 

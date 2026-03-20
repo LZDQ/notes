@@ -10,7 +10,6 @@ alias ll='ls -lA'
 alias grep='grep --color=auto'
 alias r=ranger
 alias l='eza -laho --time-style=iso --git'
-PS1='[\u@\h \W]\$ '
 
 alias n='nvim'
 export EDITOR=nvim

@@ -10,6 +10,8 @@ alias ll='ls -lA'
 alias grep='grep --color=auto'
 alias r=ranger
 alias l='eza -laho --time-style=iso --git'
+alias g=lazygit
+alias d=lazydocker
 
 alias n='nvim'
 export EDITOR=nvim

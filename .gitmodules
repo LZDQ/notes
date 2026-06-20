@@ -4,3 +4,6 @@
 [submodule ".tmux/plugins/tmux-dotbar"]
 	path = .tmux/plugins/tmux-dotbar
 	url = https://github.com/vaaleyard/tmux-dotbar
+[submodule ".tmux/plugins/tmux-autoreload"]
+	path = .tmux/plugins/tmux-autoreload
+	url = https://github.com/b0o/tmux-autoreload

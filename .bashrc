@@ -12,6 +12,7 @@ alias r=ranger
 alias l='eza -laho --time-style=iso --git'
 alias g=lazygit
 alias d=lazydocker
+alias t=tmux
 
 alias n='nvim'
 export EDITOR=nvim

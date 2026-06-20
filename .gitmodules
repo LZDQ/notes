@@ -10,3 +10,6 @@
 [submodule ".tmux/plugins/tmux-dotbar"]
 	path = .tmux/plugins/tmux-dotbar
 	url = https://github.com/LZDQ/tmux-dotbar
+[submodule ".tmux/plugins/tmux-fzf"]
+	path = .tmux/plugins/tmux-fzf
+	url = https://github.com/sainnhe/tmux-fzf

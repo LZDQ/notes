@@ -1,9 +1,12 @@
 [submodule ".tmux/plugins/tmux-yank"]
 	path = .tmux/plugins/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank
-[submodule ".tmux/plugins/tmux-dotbar"]
-	path = .tmux/plugins/tmux-dotbar
-	url = https://github.com/vaaleyard/tmux-dotbar
 [submodule ".tmux/plugins/tmux-autoreload"]
 	path = .tmux/plugins/tmux-autoreload
 	url = https://github.com/b0o/tmux-autoreload
+[submodule ".tmux/plugins/tmux-resurrect"]
+	path = .tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
+[submodule ".tmux/plugins/tmux-dotbar"]
+	path = .tmux/plugins/tmux-dotbar
+	url = https://github.com/LZDQ/tmux-dotbar

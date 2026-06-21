@@ -13,3 +13,6 @@
 [submodule ".tmux/plugins/tmux-fzf"]
 	path = .tmux/plugins/tmux-fzf
 	url = https://github.com/sainnhe/tmux-fzf
+[submodule ".tmux/plugins/tmux-gentrify"]
+	path = .tmux/plugins/tmux-gentrify
+	url = https://github.com/kristopolous/tmux-gentrify

@@ -161,6 +161,6 @@ vnoremap <silent><C-J> :m '>+1<CR>gv
 vnoremap <silent><C-K> :m '<-2<CR>gv
 
 " Pick one colorscheme
-colorscheme palenight
+silent! colorscheme palenight " if not present, this will fail silently
 "colorscheme onedark
 "colorscheme catppuccin_*

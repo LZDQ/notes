@@ -17,7 +17,7 @@ alias t=tmux
 alias n='nvim'
 export EDITOR=nvim
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+eval "$(fzf --bash)"
 
 [ -f /etc/profile ] && source /etc/profile
 export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
@@ -55,6 +55,9 @@ export -f mdcat
 
 # http(s) proxy; if tcp localhost:7890 exists, setup proxy
 echo > /dev/tcp/localhost/7890 && export HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890
-alias unproxy='unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY all_proxy ALL_PROXY'
+alias unproxy='unset {http,https,all,no}_proxy {HTTP,HTTPS,ALL,NO}_PROXY'
+
+# PATH
+export PATH="$HOME/.local/bin:$PATH"
 
 uwufetch

@@ -59,8 +59,9 @@ __nvm_ps1() {
 export -f __nvm_ps1
 PS1='$(__nvm_ps1)'"$PS1"
 
-[[ -f /usr/share/autoenv-git/activate.sh ]] && source /usr/share/autoenv-git/activate.sh
 export AUTOENV_ENV_FILENAME='.autoenv'
+# Add local autoenv setup here if needed
+[[ -f /usr/share/autoenv-git/activate.sh ]] && source /usr/share/autoenv-git/activate.sh
 
 # http(s) proxy; if tcp 127.0.0.1:7890 exists, setup proxy
 echo > /dev/tcp/127.0.0.1/7890 && export {{http,https}_proxy,{HTTP,HTTPS}_PROXY}=http://127.0.0.1:7890

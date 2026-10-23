@@ -12,19 +12,18 @@ export PATH="$HOME/.local/bin:$PATH"
 alias ls='ls --color=auto'
 alias ll='ls -lA'
 alias grep='grep --color=auto'
+alias diff='diff --color=auto'
 alias r=ranger
 alias l='eza -lahog --time-style=iso --git'
 alias g=lazygit
 alias d=lazydocker
 alias t=tmux
 alias x='codex --yolo'
+alias f='git fetch && git reset --hard @{u}'
 
-alias n='nvim'
+alias v=vim
+alias n=nvim
 export EDITOR=nvim
-
-if command -v batcat &>/dev/null && ! command -v bat &>/dev/null; then
-  alias bat='batcat'
-fi
 
 eval "$(fzf --bash)"
 eval "$(thefuck --alias)"
@@ -44,21 +43,6 @@ if command -v apt &>/dev/null; then
   alias ar='dpkg-query -W -f="\${binary:Package}\n" | fzf --multi --preview "dpkg-query -s {1}" | xargs -ro sudo apt remove'
 fi
 
-# nvm
-# Add local nvm setup here, for example (arch): source /usr/share/nvm/init-nvm.sh
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-__nvm_ps1() {
-  # Check if nvm exists as a function/command
-  if type -t nvm >/dev/null; then
-    # Run nvm current, hide errors, and format the output
-    nvm current 2>/dev/null | sed "/^system$/d; s/.*/(&) /"
-  fi
-}
-export -f __nvm_ps1
-PS1='$(__nvm_ps1)'"$PS1"
-
 export AUTOENV_ENV_FILENAME='.autoenv'
 # Add local autoenv setup here if needed
 [[ -f /usr/share/autoenv-git/activate.sh ]] && source /usr/share/autoenv-git/activate.sh
@@ -67,12 +51,19 @@ export AUTOENV_ENV_FILENAME='.autoenv'
 echo > /dev/tcp/127.0.0.1/7890 && export {{http,https}_proxy,{HTTP,HTTPS}_PROXY}=http://127.0.0.1:7890
 alias unproxy='unset {http,https,all,no}_proxy {HTTP,HTTPS,ALL,NO}_PROXY'
 
+if command -v batcat &>/dev/null && ! command -v bat &>/dev/null; then
+  alias bat='batcat'
+fi
+
 if command -v wl-copy wl-paste &>/dev/null; then
     alias c='wl-copy'
     alias v='wl-paste'
 elif command -v pbcopy pbpaste &>/dev/null; then
     alias c='pbcopy'
     alias v='pbpaste'
+elif command -v xclip &>/dev/null; then
+    alias c='xclip -selection clipboard'
+    alias p='xclip -selection clipboard -out'
 fi
 
-uwufetch 2>/dev/null || neofetch
+uwufetch 2>/dev/null || neofetch 2>/dev/null || fastfetch

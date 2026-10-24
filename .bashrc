@@ -21,7 +21,6 @@ alias t=tmux
 alias x='codex --yolo'
 alias f='git fetch && git reset --hard @{u}'
 
-alias v=vim
 alias n=nvim
 export EDITOR=nvim
 
@@ -63,7 +62,7 @@ elif command -v pbcopy pbpaste &>/dev/null; then
     alias v='pbpaste'
 elif command -v xclip &>/dev/null; then
     alias c='xclip -selection clipboard'
-    alias p='xclip -selection clipboard -out'
+    alias v='xclip -selection clipboard -out'
 fi
 
 uwufetch 2>/dev/null || neofetch 2>/dev/null || fastfetch
